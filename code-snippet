@@ -1,0 +1,126 @@
+#this code can use for card collapse and expand
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Installment Payment Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2px auto;
+            padding: 20px;
+            margin-left: 1px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            padding: 20px;
+            display: none;
+        }
+
+        .card.show {
+            display: block;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .reminder {
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .bullet-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .bullet-list li {
+            padding: 10px;
+            font-family: Arial, sans-serif, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .toggle-button {
+            background-color: #fff;
+            color: black;
+            padding: 10px 20px;
+            border: 1px solid mediumseagreen;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .toggle-button:focus {
+            outline: none;
+        }
+
+        .toggle-button .arrow {
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .toggle-button .arrow.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+
+    <div class="container">
+        <button class="toggle-button" onclick="toggleCard()">
+            Loan Application Criteria <span class="arrow">&#9660;</span>
+        </button>
+        <div class="card" id="loanCard">
+            <div class="container mt-4">
+                <h2><b>Loan Application Criteria</b></h2>
+                <hr>
+                <ul class="bullet-list">
+                    <li>Merchants should pay their loan installments through shurjoPay payment Gateway services.</li>
+                    <li>Loan Installment amount will be blocked from Merchant’s shurjoPay account until the Loan installment is paid every month.</li>
+                    <li>Installment reminders will be sent to merchants 3 times each month.</li>
+                    <li>If banks want other ways of payment, a system (API) must be established for successful payment notifications so that shurjoPay gets a notification and releases the blocked amount and initiates the settlement.</li>
+                    <li>shurjoMukhi Limited needs to track the number of payments made for a particular loan and show that information to the merchant portal.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCard() {
+            var card = document.getElementById('loanCard');
+            var arrow = document.querySelector('.toggle-button .arrow');
+            if (card.classList.contains('show')) {
+                card.classList.remove('show');
+                arrow.classList.remove('rotate');
+            } else {
+                card.classList.add('show');
+                arrow.classList.add('rotate');
+            }
+        }
+    </script>
+
+
+...........................................................................................................................................................................
+
